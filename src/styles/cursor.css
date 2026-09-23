@@ -1,0 +1,106 @@
+/* ============================================
+   CUSTOM CURSOR
+   ============================================ */
+
+.cursor-outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-accent);
+  background: rgba(232, 164, 74, 0.03);
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  mix-blend-mode: difference;
+  transition: width 0.3s var(--ease-out-expo),
+              height 0.3s var(--ease-out-expo),
+              border-radius 0.3s var(--ease-out-expo),
+              background 0.3s var(--ease-out-expo),
+              opacity 0.3s var(--ease-out-expo);
+  will-change: transform;
+}
+
+.cursor-outer.hovering {
+  width: 64px;
+  height: 64px;
+  background: rgba(232, 164, 74, 0.08);
+  border-color: var(--color-accent-hover);
+}
+
+.cursor-outer.clicking {
+  width: 32px;
+  height: 32px;
+  background: rgba(232, 164, 74, 0.15);
+}
+
+.cursor-outer.on-text {
+  width: 4px;
+  height: 28px;
+  border-radius: 2px;
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  mix-blend-mode: normal;
+}
+
+.cursor-outer .cursor-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cursor-outer.hovering .cursor-label {
+  opacity: 1;
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-text-primary);
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transition: opacity 0.2s ease, transform 0.15s ease;
+  will-change: transform;
+}
+
+.cursor-dot.hidden {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* Trail particles */
+.cursor-trail {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  pointer-events: none;
+  z-index: calc(var(--z-cursor) - 1);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Hide on mobile */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-outer,
+  .cursor-dot,
+  .cursor-trail {
+    display: none !important;
+  }
+}
