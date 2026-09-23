@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import PageTransition from '../components/PageTransition';
 import MarqueeStrip from '../components/MarqueeStrip';
-import { SplitText, TextReveal, AnimatedCounter, FadeInView, MagneticButton } from '../components/AnimationComponents';
+import { SplitText, AnimatedCounter, FadeInView, MagneticButton } from '../components/AnimationComponents';
 import { expertiseData, stats } from '../data/content';
 import '../styles/home.css';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import PageTransition from '../components/PageTransition';
 import MarqueeStrip from '../components/MarqueeStrip';
-import { FadeInView, TextReveal, AnimatedCounter } from '../components/AnimationComponents';
-import { experiences, tools, stats } from '../data/content';
+import { FadeInView, TextReveal } from '../components/AnimationComponents';
+import { experiences, tools } from '../data/content';
 import '../styles/about.css';
 
 const traits = [
